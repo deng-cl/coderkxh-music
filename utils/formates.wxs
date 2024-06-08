@@ -1,16 +1,9 @@
-/**
- * formatTime 时间格式化的辅助函数，使其时间保持以 00:00 的方式进行展示
- * @param time 传入对应的时间
- */
+
 function padLeft(time){
     time = time + ""
     return ("00" + time).slice(time.length)
 }
-/**
- * 时间格式化函数
- * @param time 格式化时间参数
- * @param isMS time 是否以毫秒 ms 为单位，默认 ture <反之需要传入以秒 s 为单位的时间>
- */
+
 function formatTime(time,isMS = true) { // -- 格式化时间
    if(isMS) time = time / 1000 // -- "ms" to "s" <当time为 ms 时>
 
@@ -30,11 +23,6 @@ function formatCount(num) { // -- 格式化 count
     }
 }
 
-/**
- * 遍历 song 的中对应的所有 songer 名称
- * @param songer_arr 每个 songer 的基本信息
- * @returns name1 nam2 name3...
- */
 function formateEachEvenySonger (songer_arr){ 
     var songers = ""
     var len = songer_arr && songer_arr.length

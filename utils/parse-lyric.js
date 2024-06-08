@@ -1,5 +1,5 @@
 const timeReg = /\[(\d{2}):(\d{2}).(\d{2,3})\]/
-export function parseLyrics(lryString){ // -- 歌词解析工具函数
+export function parseLyrics(lryString){ 
     const lyricInfos = []
     const lyricLines = lryString.split("\n")
     for(const lyricLine of lyricLines){
