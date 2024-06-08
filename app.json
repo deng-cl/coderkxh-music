@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main-video/main-video",
+    "pages/detail-search/detail-search",
+    "pages/detail-song/detail-song",
+    "pages/detail-menu/detail-menu"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Conderkxh-music",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "list": [
+      {
+          "pagePath": "pages/index/index",
+          "text": "音乐",
+          "iconPath": "assets/images/tabbar/music_normal.png",
+          "selectedIconPath": "assets/images/tabbar/music_active.png"
+      },
+      {
+          "pagePath": "pages/main-video/main-video",
+          "text": "视频",
+          "iconPath": "assets/images/tabbar/video_normal.png",
+          "selectedIconPath": "assets/images/tabbar/video_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "subPackages": [
+      {
+          "root": "packageVideo",
+          "name": "video",
+          "pages": [
+            "pages/detail-video/detail-video"
+          ]
+      },
+      {
+        "root": "packagePlayer",
+        "name": "player",
+        "pages": [
+          "pages/music-player/music-player"
+        ]
+    }
+  ],
+  "preloadRule": {
+      "pages/index/index":{
+        "network": "all",
+        "packages": [
+            "packagePlayer",
+            "player"
+        ]
+      }
+  }
+}

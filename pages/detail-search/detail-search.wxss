@@ -1,0 +1,7 @@
+/* pages/detail-search/detail-search.wxss */
+.title{
+    text-align: center;
+    font-size: 38rpx;
+    margin: 40rpx;
+    color: #aaa;
+}

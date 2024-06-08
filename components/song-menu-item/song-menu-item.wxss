@@ -1,0 +1,39 @@
+.item{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 236rpx;
+}
+
+.item .top{
+    position: relative;
+}
+
+.item .top .image{
+    width: 100%;
+    border-radius: 12rpx;
+}
+
+.item .top .count{
+    position: absolute;
+    bottom: 10rpx;
+    right: 0;
+    color: white;
+    padding: 10rpx;
+    background-color: rgba(51, 51, 51, 0.452);
+    box-sizing: border-box;
+    border-radius: 12rpx;
+    font-size: 24rpx;
+}
+
+.item .bottom{
+    padding: 0 4rpx;
+    box-sizing: border-box;
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 28rpx;
+}
+

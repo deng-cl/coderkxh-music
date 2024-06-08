@@ -1,0 +1,6 @@
+<!--pages/detail-search/detail-search.wxml-->
+<view class="title">
+    暂未开发搜索功能...
+</view>
+
+<button bind:tap="onBtnBack">返回上一页</button>

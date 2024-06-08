@@ -1,0 +1,34 @@
+<!--components/menu-header/menu-header.wxml-->
+<wxs src="/utils/formates.wxs" module="formates"/>
+
+<view class="header">
+    <view class="bg-image">
+        <image class="image" src="{{ songInfo.coverImgUrl }}" />
+        <view class="cover"></view>
+    </view>
+
+    <view class="content">
+        <view class="top">
+            <image class="content-iamge" src="{{ songInfo.coverImgUrl }}" mode="widthFix" />
+            <view class="info">
+                <view class="song-name">{{ songInfo.name }}</view>
+                <view class="upmain">
+                    <image class="up-arvatar" src="{{ songInfo.creator.avatarUrl }}" mode="widthFix"/>
+                    <text class="up-name">{{ songInfo.creator.nickname }}</text>
+                </view>
+                <view class="info-desc">简介：{{ songInfo.description}}</view>
+            </view>
+        </view>
+
+        <view class="bottom">
+            <view class="favourite">
+                <image class="icon" src="/assets/images/icons/favor_icon.png" mode="widthFix"/>
+                <text class="name">{{ formates.formatCount(songInfo.subscribedCount) }}</text>
+            </view>
+            <view class="share">
+                <image class="icon" src="/assets/images/icons/share_icon.png" mode="widthFix"/>
+                <text class="name">分享</text>
+            </view>
+        </view>
+    </view>
+</view>

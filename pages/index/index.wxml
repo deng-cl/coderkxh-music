@@ -1,0 +1,67 @@
+
+<wxs src="/utils/formates.wxs" module="formates"/>
+
+<van-search value="{{ value }}" shape="round" background="#fafafa" placeholder="请输入搜索关键词" bind:click-input="toSearchPage" />
+
+<!-- banners -->
+<!-- 根据 image 组件高度来动态设置 swiper 的高度 -->
+<swiper class="swiper" style="height: {{ bannerHeight }}px;" autoplay circular indicator-dots>
+    <block wx:for="{{ banners }}" wx:key="targetId">
+        <swiper-item class="swiper-item">
+            <image class="image banner-image" src="{{ item.pic }}" mode="widthFix" bindload="onBannerImageLoad" />
+        </swiper-item>
+    </block>
+</swiper>
+
+<!-- 推荐歌曲 -->
+<view class="recommend" wx:if="{{ recommendList.length }}">
+    <area-header title="热门歌曲" bind:onClickMore="onClickRecommendMore"></area-header>
+    <view class="recommend-list">
+        <block wx:for="{{ recommendList }}" wx:key="id">
+            <song-item-v1 itemData="{{ item }}" bind:tap="onPlayRecSongList" data-index="{{ index }}"></song-item-v1>
+        </block>
+    </view>
+</view>
+
+<!-- 热门歌单 -->
+<view class="hot-menu" wx:if="{{ hotMenuList.length }}">
+    <song-menu-area title="热门歌单" menuList="{{ hotMenuList }}"></song-menu-area>
+</view>
+
+<!-- 推荐歌单 - 华语 -->
+<view class="rec-menu" wx:if="{{ recMenuList.length }}">
+    <song-menu-area title="推荐歌单" menuList="{{ recMenuList }}"></song-menu-area>
+</view>
+
+<!-- 巅峰榜 -->
+<view class="ranking">
+    <area-header title="巅峰榜" hasMore="{{ false }}" bind:onClickMore="onClickRankingMore"></area-header>
+    <view class="ranking-list">
+        <block wx:for="{{ rankingInfos }}" wx:key="id">
+            <ranking-item itemData="{{ item }}" rankingMapName="{{ index }}"></ranking-item>
+        </block>
+    </view>
+</view>
+
+<!-- PLAY_BAR 底部播放栏 -->
+<view class="play-bar-placeholder" wx:if="{{ currentSong.name || isPlaying }}"></view>
+<view class="play-bar" wx:if="{{ currentSong.name || isPlaying }}">
+    <view class="left">
+        <view class="album">
+            <image class="image" src="{{ currentSong.al.picUrl }}" mode="widthFix"
+                style="animation-play-state: {{ isPlaying ? 'running' : 'paused' }};"
+                bind:tap="onPlayBarAlbumTap"
+            />
+        </view>
+        <view class="info">
+            <view class="song">{{ currentSong.name }}</view>
+            <view class="songer">{{ formates.formateEachEvenySonger(currentSong.ar) }}</view>
+        </view>
+    </view>
+    <view class="right">
+        <image class="icon" src="/assets/images/music/{{ isPlaying ? 'pause' : 'play'}}_icon.png" mode="widthFix"
+            bind:tap="onSwitchPlayStatus"
+        />
+        <image class="icon" src="/assets/images/music/playlist_icon.png" mode="widthFix"/>
+    </view>
+</view>

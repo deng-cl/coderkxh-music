@@ -1,0 +1,44 @@
+/* nav-bar */
+.nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px; /* nav-bar 的高度时固定的 44px */
+    color: white;
+}
+.nav .left-default, .nav .left-slot, .nav .right{
+    width: 120rpx;
+}
+.nav .center-default,.nav .center-slot{
+    font-size: 28rpx;
+    flex: 1;
+}
+.left-default, .center-default, .left-slot, .center-slot, .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vant-icon{
+    font-size: 40rpx;
+}
+
+/* center slot/default */
+.center-default{ display: none; } /* 默认 default 不展示 */
+.center-slot:empty{
+    display: none;
+}
+.center-slot:empty + .center-default{ /* 当 slot 为空时，展示 default 元素 */
+    display: flex;
+}
+
+/* left slot/default */
+.left-default{ display: none; } /* 默认 default 不展示 */
+.left-slot:empty{
+    display: none;
+}
+.left-slot:empty + .left-default{ /* 当 slot 为空时，展示 default 元素 */
+    display: flex;
+}
+

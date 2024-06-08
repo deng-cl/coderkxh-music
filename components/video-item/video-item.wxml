@@ -1,0 +1,19 @@
+<wxs src="/utils/formates.wxs" module="formates"/> 
+
+<view class="item" bind:tap="onItemTap"> <!-- 绑定 onItemTap 函数事件，处理 video-item 的点击事件 -> 进入对应的详情页中 -->
+    <view class="album">
+        <image class="image" src="{{ itemData.cover }}" mode="widthFix"/>
+        <view class="info">
+            <view class="playcount">
+                <!-- 因为小程序上线有一个限制，如果想在小程序中使用 "图片" 资源，不能使用本地的，只能在线的图片 -> 所以 ↓ 通过 base64 将对应的 play-icon 从 css 中 -->
+                <!-- <image class="icon" src="/assets/images/icons/play_icon.png" mode="widthFix" /> -->
+                {{ formates.formatCount(itemData.playCount) }}
+            </view>
+            <view class="duration">{{ formates.formatTime(itemData.mv.videos[0].duration) }}</view>
+        </view>
+    </view>
+
+    <view class="content">{{ itemData.name }} - {{ itemData.artistName }}</view>
+</view>
+
+

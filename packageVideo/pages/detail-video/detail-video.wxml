@@ -1,0 +1,36 @@
+<!--pages/detail-video/detail-video.wxml-->
+<!-- <text>detail: {{ id }}</text> -->
+<wxs src="/utils/formates.wxs" module="formates"/>
+
+<video class="video" id="video" src="{{ mvUrl }}" 
+    autoplay
+    danmu-list="{{ danmuList }}"
+    referrer-policy="origin"
+></video>
+
+<view class="detail">
+    <view class="video-info">
+        <view class="name">{{ mvInfo.name }}</view>
+        <view class="artist-name">{{ mvInfo.artistName }} -</view>
+        <view class="other">{{ formates.formatCount(mvInfo.playCount) }}次播放 - {{ mvInfo.publishTime }}</view>
+    </view>
+
+    <view class="relate-rideo">
+        <view class="title">推荐视频</view>
+        <block wx:if="{{ relatedRideo.length }}" wx:for="{{ relatedRideo }}" wx:key="id">
+            <view class="content" bind:tap="onEntrySimiMVTap" data-id="{{ item.id }}">
+                <view class="image-info">
+                    <image class="image" src="{{ item.cover }}" mode="widthFix"/>
+                    <view class="playcount">{{ formates.formatCount(item.playCount) }}</view>
+                </view>
+                <view class="info">
+                    <view class="desc">{{ item.name }}</view>
+                    <view class="artist-name">{{ item.artistName }}-</view>
+                </view>
+            </view>
+        </block>
+        <view class="not-simi-mv">
+            暂无推荐视频
+        </view>
+    </view>
+</view>

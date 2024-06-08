@@ -1,0 +1,15 @@
+<view class="nav-bar">
+    <!-- 留出顶部状态栏高度: 根据不同机型动态设置对应高度 -->
+    <view class="status-bar" style="height:{{ statusHeight }}px"></view>
+    <view class="nav">
+        <view class="left left-slot"> <slot name="left"></slot> </view>
+        <view class="left left-default" bind:tap="onTapBack">
+            <van-icon name="arrow-left" class="vant-icon" />
+        </view>
+
+        <view class="center center-slot"> <slot name="center"></slot> </view>
+        <view class="center center-default">{{ title }}</view>
+
+        <view class="right"></view>
+    </view>
+</view>

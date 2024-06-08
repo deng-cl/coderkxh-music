@@ -1,0 +1,13 @@
+.menu .list{
+    white-space: nowrap;
+    margin-left: -20rpx; /* 当 margin 为负数时，可以撑大对应的盒子 --> 将 .list 盒子撑大，用于覆盖页面的 左右 padding */
+}
+
+.menu .list .item{
+    display: inline-block;
+    margin-left: 20rpx;
+}
+
+.menu .list .item:last-of-type{
+    margin-right: 20rpx;
+}

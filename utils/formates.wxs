@@ -1,0 +1,51 @@
+/**
+ * formatTime 时间格式化的辅助函数，使其时间保持以 00:00 的方式进行展示
+ * @param time 传入对应的时间
+ */
+function padLeft(time){
+    time = time + ""
+    return ("00" + time).slice(time.length)
+}
+/**
+ * 时间格式化函数
+ * @param time 格式化时间参数
+ * @param isMS time 是否以毫秒 ms 为单位，默认 ture <反之需要传入以秒 s 为单位的时间>
+ */
+function formatTime(time,isMS = true) { // -- 格式化时间
+   if(isMS) time = time / 1000 // -- "ms" to "s" <当time为 ms 时>
+
+    var minutes = Math.floor(time / 60)
+    var second = Math.floor(time) % 60
+    return padLeft(minutes) + ":" + padLeft(second)
+}
+
+function formatCount(num) { // -- 格式化 count 
+    num = Number(num)
+    if (num > 100000000) {
+        return (num / 100000000).toFixed(1) + "亿"
+    } else if (num > 10000) {
+        return (num / 10000).toFixed(1) + "万"
+    } else {
+        return num
+    }
+}
+
+/**
+ * 遍历 song 的中对应的所有 songer 名称
+ * @param songer_arr 每个 songer 的基本信息
+ * @returns name1 nam2 name3...
+ */
+function formateEachEvenySonger (songer_arr){ 
+    var songers = ""
+    var len = songer_arr && songer_arr.length
+    for(var i = 0;i < len; i++){
+        songers += songer_arr[i].name + " "
+    }
+    return songers
+}
+
+module.exports = {
+    formatTime: formatTime,
+    formatCount:formatCount,
+    formateEachEvenySonger:formateEachEvenySonger
+}

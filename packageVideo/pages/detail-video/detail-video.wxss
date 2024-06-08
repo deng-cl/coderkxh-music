@@ -1,0 +1,81 @@
+/* pages/detail-video/detail-video.wxss */
+/* page{
+    height: 100vh;
+} */
+
+.video{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 7;
+}
+
+.detail {
+    /* margin-top: 20rpx; */
+    margin-top: 450rpx; /* video 组件默认固定高度 225px */
+    /* 🔺方式二
+        也可以不使用将↑video设置为fixed定位，通过给该所有元素包裹一个 scroll-view 组件，实现对应的滚动: 但 scroll-view 需要一个固定的一个高度
+        + 因为不同的屏幕剩余的高度也是不一样的，所以可以通过 css 中的 calc() 函数进行高度的计算
+        + height: calc(100vh - 225px) -- 225px 是 video 默认固定高度
+    */
+    padding: 40rpx;
+    box-sizing: border-box;
+}
+
+.detail .video-info .name{
+    font-size: 48rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+.detail .video-info .artist-name,.detail .video-info .other{
+    margin-bottom: 6rpx;
+    color: rgb(133, 131, 131);
+}
+
+/* -- */
+.detail .relate-rideo .title{
+    margin-top: 60rpx;
+    margin-bottom: 30rpx;
+    font-size: 36rpx;
+    font-weight: 540;
+}
+
+.detail .relate-rideo .content{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.detail .relate-rideo .content .image-info {
+    width: 40%;
+    position: relative;
+    margin-right: 20rpx;
+}
+
+.detail .relate-rideo .content .image-info .image {
+    width: 100%;
+    border-radius: 10rpx;
+}
+
+.detail .relate-rideo .content .image-info .playcount{
+    position: absolute;
+    bottom: 20rpx;
+    right: 20rpx;
+    color: white;
+    font-size: 24rpx;
+}
+
+.detail .relate-rideo .content .info{
+    flex: 1;
+}
+.detail .relate-rideo .content .info .artist-name {
+    color: rgb(133, 131, 131);
+    font-size: 28rpx;
+    margin-top: 5rpx;
+}
+
+.not-simi-mv{
+    text-align: center;
+    color: #aaa;
+}

@@ -1,0 +1,14 @@
+<wxs src="/utils/formates.wxs" module="formates"/>
+
+<view class="song-item" bind:tap="onPlaySong">
+    <image class="image" src="{{ itemData.al.picUrl }}" mode="widthFix"/>
+    <view class="info">
+        <view class="song-name">
+            <view class="song">{{ itemData.name }}</view>
+            <view class="songer">{{ formates.formateEachEvenySonger(itemData.ar) }}</view>
+        </view>
+        <view class="arrow">
+            <van-icon name="arrow" />
+        </view>
+    </view>
+</view>

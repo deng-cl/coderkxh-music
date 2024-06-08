@@ -1,0 +1,17 @@
+/* pages/main-video/main-video.wxss */
+.main-video{
+    width: 750rpx;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+}
+
+.main-video .notMore{
+    width: 100%;
+    padding: 20rpx 0 40rpx 0;
+    text-align: center;
+    font-size: 28rpx;
+    color: rgb(192, 190, 190);
+}

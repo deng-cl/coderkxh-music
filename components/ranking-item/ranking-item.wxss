@@ -1,0 +1,62 @@
+
+.ranking-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.ranking-item .content .name{
+    font-size: 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.ranking-item .content .list {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.ranking-item .content .list .song-info{
+    padding-right: 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 10rpx;
+}
+
+.ranking-item .content .list .song-info .song{
+    font-size: 24rpx;
+}
+.ranking-item .content .list .song-info .songer{
+    font-size: 22rpx;
+    margin-top: 8rpx;
+    margin-bottom: 20rpx;
+    color: #999;
+}
+
+
+/* album */
+.ranking-item .album {
+    width: 280rpx;
+    height: 280rpx;
+    position: relative;
+}
+
+.ranking-item .album .image{
+    width: 280rpx;
+    border-radius: 0 12rpx 12rpx 0;
+}
+
+.ranking-item .album .playcount{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20rpx;
+    color: white;
+    padding: 10rpx;
+    background-color: rgba(51, 51, 51, 0.452);
+    box-sizing: border-box;
+    border-radius: 12rpx;
+    font-size: 24rpx;
+}
+
+

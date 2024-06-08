@@ -1,0 +1,8 @@
+<view class="menu">
+    <area-header title="{{ title }}" bind:onClickMore="onClickMenuMore"></area-header>
+    <scroll-view class="list" scroll-x style="width: {{ screenWidth }}px;">
+        <block wx:for="{{ menuList }}" wx:key="id">
+            <song-menu-item class="item" itemData="{{ item }}"></song-menu-item>
+        </block>
+    </scroll-view>
+</view>

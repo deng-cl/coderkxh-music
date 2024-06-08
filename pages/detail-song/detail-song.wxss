@@ -1,0 +1,16 @@
+/* pages/detail-song/detail-song.wxss */
+page{
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.header {
+    margin-bottom: 20rpx;
+    max-width: 750rpx;
+}
+
+.title{
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}

@@ -1,0 +1,99 @@
+.header{
+    width: 750rpx;
+    height: 500rpx;
+    position: relative;
+    color: white;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+}
+.bg-image .image, .bg-image .cover{
+    width: 100%;
+    height: 100%;
+    margin-left: -20rpx;
+}
+.bg-image .cover {
+    position: absolute;
+    background-color: rgba(56, 56, 56, 0.363);
+    backdrop-filter: blur(3px);
+    top: 0;
+}
+
+/* content */
+.content {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    /* padding: 60rpx 20rpx; */
+    box-sizing: border-box;
+    margin: 60rpx 0rpx;
+    max-width: 750rpx;
+}
+.content .top {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.content .top .content-iamge{
+    width: 240rpx;
+    border-radius: 16rpx;
+    margin-right: 40rpx;
+    flex-shrink: 0;
+}
+
+/* -- */
+.content .top .info{
+    display: flex;   
+    flex-flow: column nowrap;
+    flex-shrink: 1;
+    width: 421rpx;
+}
+
+.content .top .info .song-name{
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 36rpx;
+}
+
+.content .top .info .upmain {
+    margin: 20rpx 0;
+    display: flex;
+    align-items: center;
+}
+.content .top .info .upmain .up-arvatar{
+    width: 70rpx;
+    border-radius: 40rpx;
+    margin-right: 20rpx;
+}
+
+.content .top .info .info-desc{
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* bottom */
+.content .bottom {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80rpx;
+}
+.content .bottom .icon {
+    width: 45rpx;
+    margin-right: 10rpx;
+}
+.content .bottom .name {
+    font-size: 32rpx;
+}
+.content .bottom .favourite, .content .bottom .share{
+    display: flex;
+    align-items: center;
+}

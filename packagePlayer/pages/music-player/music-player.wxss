@@ -1,0 +1,138 @@
+/* bg-image */
+.bg-image, .bg-cover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+}
+.bg-cover{
+    background-color: rgba(0,0,0,.3);
+    backdrop-filter: blur(20px);
+}
+
+/* nav-bar */
+.tabs{
+    display: flex;
+    color: #aaa;
+}
+.tabs .line{ 
+    margin: 0 10rpx;
+}
+.tabs .item.active {
+    color: white;
+}
+
+/* content/swiper  */
+.swiper {
+    color: white;
+}
+
+/* 歌曲布局 */
+.music{
+    padding: 40rpx 60rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    /* justify-content: space-between; */
+}
+
+.music .album {
+    /* flex: 1; */
+    height: 55%;
+    text-align: center;
+}
+.music .album .image{
+    height: 100%;
+    width: 100%;
+    max-width: 630rpx;
+    border-radius: 12rpx;
+}
+
+.music .info {
+    margin: 40rpx 0;
+    /* margin-bottom: 40rpx; */
+    /* flex: 1; */
+}
+.music .info .name{
+    font-size: 48rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.music .info .songer{}
+
+.music .lyric {
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0rpx 0 20rpx 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music .progress {
+    margin-bottom: 15rpx;
+}
+.music .progress .sider{
+    margin: 0;
+    margin-left: 18rpx;
+    margin-right: 0rpx;
+    margin-bottom: 8rpx;
+}
+.music .progress .time{
+    font-size: 28rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.music .control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    margin: 12rpx 0;
+}
+.music .control .icon{
+    width: 60rpx;
+}
+.music .control .order{
+    width: 80rpx;
+}
+.music .control .resume{
+    width: 120rpx;
+}
+
+
+/* lyrics 歌词页 */
+.lyric-list{
+    height: 100%;
+    text-align: center;
+    color: #aaa;
+    box-sizing: border-box;
+    padding: 40rpx 60rpx;
+}
+
+.lyric-list ::-webkit-scrollbar{
+    display: none;
+}
+
+.lyric-list .lyric-item {
+    /* height: 40px; */
+    line-height: 40px;
+    font-size: 30rpx;
+}
+
+.lyric-list .lyric-item.active{
+    color: white;
+    font-size: 38rpx;
+    transition: all .1s;
+}

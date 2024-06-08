@@ -1,0 +1,7 @@
+<view class="main-video">
+    <block wx:for="{{ videoList }}" wx:key="id">
+        <video-item itemData = "{{ item }}" style="flex: 1;"></video-item>
+    </block>
+
+    <view class="notMore" hidden="{{ hasMore }}">暂无更多数据!</view>
+</view>

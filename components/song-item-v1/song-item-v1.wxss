@@ -1,0 +1,38 @@
+
+
+.song-item,.song-item .info{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.song-item{
+    margin-bottom: 20rpx;
+}
+
+/* image */
+.song-item .image{
+    width: 120rpx;
+    height: 124rpx;
+    margin-right: 20rpx;
+    border-radius: 10rpx;
+}
+
+/* info */
+.song-item .info {
+    flex: 1;
+    justify-content: space-between; 
+}
+
+.song-item .info .song-name { }
+.song-item .info .song-name .song{ 
+    font-size: 28rpx;
+}
+.song-item .info .song-name .songer{ 
+    font-size: 22rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+
+.song-item .info .arrow{
+    color: #999;
+}

@@ -1,0 +1,26 @@
+<wxs src="/utils/formates.wxs" module="formates"/>
+
+<view class="ranking-item" bind:tap="onRankingTap">
+    <view class="content">
+        <view class="name">{{ itemData.name }}</view>
+        <view class="list">
+            <block wx:for="{{ 3 }}" wx:key="*this">
+                <view class="song-info">
+                    <view class="song">
+                        <text>{{ item + 1 }}. </text>
+                        <text>{{ itemData.tracks[item].name }}</text>
+                        <text class="songer"> - {{ formates.formateEachEvenySonger(itemData.tracks[item].ar) }}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="album">
+        <image class="image" src="{{ itemData.coverImgUrl }}" mode="widthFix"/>
+        <view class="playcount">
+            {{ formates.formatCount(itemData.playCount) }}
+        </view>
+    </view>
+</view>
+
